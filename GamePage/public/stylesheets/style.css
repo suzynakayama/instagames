@@ -136,6 +136,7 @@ textarea {
     font: inherit;
     font-size: 14px;
     height: 70px;
+    overflow-y: scroll;
 }
 
 input[type="submit"] {
@@ -221,6 +222,11 @@ input[type="file"]:focus {
     max-width: 330px;
     margin: 0px auto;
     padding-top: 15px;
+}
+
+.card-content {
+    height: 75px;
+    overflow-y: scroll;
 }
 
 .card-content p {
