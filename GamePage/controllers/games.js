@@ -59,7 +59,7 @@ const createGame = (req, res) => {
                     user
                 });
             }
-            res.redirect("/games");
+            res.redirect("/users");
         });
     });
 };
@@ -84,11 +84,15 @@ const updateGame = (req, res) => {
     Game.findById(req.params.id, async (err, game) => {
         if (req.file) {
             try {
+                console.log(game.image);
                 await cloudinary.v2.uploader.destroy(game.imageId);
                 let result = await cloudinary.v2.uploader.upload(req.file.path);
                 console.log("inside");
+                console.log(result);
                 req.body.image = result.secure_url;
                 req.body.imageId = result.public_id;
+                console.log(req.body.image);
+                game.image = req.body.image;
             } catch (err) {
                 console.log(err);
                 return res.redirect(`/games/${req.params.id}/edit`);
@@ -108,7 +112,7 @@ const deleteGame = (req, res) => {
         try {
             await cloudinary.v2.uploader.destroy(game.imageId);
             game.remove();
-            res.redirect("/games");
+            res.redirect("/users");
         } catch (err) {
             console.log(err);
             return res.redirect(`/games/${req.params.id}`);
