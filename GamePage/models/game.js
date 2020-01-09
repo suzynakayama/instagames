@@ -27,7 +27,10 @@ const gameSchema = new Schema(
         },
         image: String,
         imageId: String,
-        link: String,
+        link: {
+            type: String,
+            required: true
+        },
         codeLink: {
             type: String,
             required: true
