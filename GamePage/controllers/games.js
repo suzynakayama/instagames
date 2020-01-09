@@ -86,6 +86,7 @@ const updateGame = (req, res) => {
             try {
                 await cloudinary.v2.uploader.destroy(game.imageId);
                 let result = await cloudinary.v2.uploader.upload(req.file.path);
+                console.log("inside");
                 req.body.image = result.secure_url;
                 req.body.imageId = result.public_id;
             } catch (err) {
