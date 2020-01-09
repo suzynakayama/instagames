@@ -23,6 +23,9 @@ require("cloudinary").config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
+console.log(process.env.CLOUDINARY_API_KEY);
+console.log(process.env.CLOUDINARY_API_SECRET);
+
 const app = express();
 
 // view engine setup
