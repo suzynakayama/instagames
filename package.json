@@ -1,0 +1,9 @@
+{
+    "name": "gamepage",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "heroku-prebuild": "cd ./GamePage && npm install && cd ..",
+        "start": "cd ./GamePage && npm start"
+    }
+}
