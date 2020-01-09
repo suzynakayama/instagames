@@ -1,0 +1,85 @@
+<%- include('../partials/header.ejs') %>
+
+<form class="form"
+    action="/games/<%= gameId %>?_method=PUT"
+    method="POST"
+    enctype="multipart/form-data"
+>
+    <div class="center">
+        <label for="name" class="align"> Game Name</label>
+        <input
+            type="text"
+            name="name"
+            id="name"
+            class="validate"
+            autocomplete="off"
+            required
+            value="<%= game.name %>"
+        />
+    </div>
+    <br />
+    <div class="center wrap">
+        <label for="image" class="align upload"> Image</label>
+        <br />
+        <br />
+        <input
+            class="inputImg"
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+        />
+    </div>
+    <br />
+    <div class="center">
+        <label for="link" class="align"> Game Link</label>
+        <input
+            type="text"
+            name="link"
+            id="link"
+            class="validate"
+            autocomplete="off"
+            required
+            value="<%= game.link %>"
+        />
+    </div>
+    <br />
+    <div class="center">
+        <label for="codeLink" class="align"> Game Code Link</label>
+        <input
+            type="text"
+            name="codeLink"
+            id="codeLink"
+            class="validate"
+            autocomplete="off"
+            required
+            value="<%= game.codeLink %>"
+        />
+    </div>
+    <br />
+    <div class="center">
+        <label for="description" class="align"> Game Description</label>
+        <br />
+        <br />
+        <textarea
+            type="text"
+            name="description"
+            id="description"
+            class="validate"
+            autocomplete="off"
+            required
+        >
+<%= game.description %></textarea
+        >
+    </div>
+    <br />
+    <div class="center">
+        <input
+            type="submit"
+            value="Save Game"
+            class="btn waves-effect waves-light"
+        />
+    </div>
+</form>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,45 @@
+<%- include("../partials/header.ejs") %>
+
+<form class="form" action="/games" method="get" id="game-search-form">
+    <label for="gameSearch">Search a Game</label>
+    <input type="text" name="gameSearch" id="gameSearch" autocomplete="off" />
+</form>
+<br />
+<br />
+
+<a class="display btn waves-effect waves-light" href="/games/new"
+    >Add New Game</a
+>
+<br />
+<br />
+
+<div class="flex" id="display-games">
+    <% games.forEach(game => {%>
+    <div class="flex-item">
+        <div class="card">
+            <div class="card-image">
+                <img src="<%= game.image %>" />
+                <div class="card-title-div">
+                    <div class="card-title"><%= game.name %></div>
+                </div>
+                <a
+                    class="btn-floating halfway-fab waves-effect waves-light red"
+                    href="/games/<%= game._id %>"
+                    ><i class="material-icons">Info</i></a
+                >
+            </div>
+            <div class="card-content">
+                <p><%= game.description %></p>
+            </div>
+            <div class="card-action">
+                <a href="<%= game.link %>" target="_blank">Play!</a>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
+<script src="/javascripts/show.js"></script>
+
+<%- include("../partials/footer.ejs") %>
+

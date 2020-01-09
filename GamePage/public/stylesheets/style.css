@@ -1,0 +1,327 @@
+/* general format */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    color: #09dcc1;
+}
+
+.size {
+    font-size: 20px;
+}
+
+.align {
+    text-align: center;
+}
+
+.center {
+    margin: 20px auto;
+}
+
+.display {
+    display: block;
+    margin-left: 80%;
+    margin-right: 20px;
+    max-width: 225px;
+}
+
+/* nav format */
+
+nav {
+    background: linear-gradient(to left, #fff, transparent 85%);
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 3;
+}
+
+nav a {
+    margin: 0 15px;
+    color: rgb(52, 58, 64);
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #09dcc1;
+}
+
+#logo-nav-background {
+    margin-right: auto;
+}
+
+nav img {
+    height: 50px;
+    width: auto;
+    margin-left: 25px;
+}
+
+/* main formatting */
+
+.title {
+    text-align: center;
+    margin: 60px;
+    font-size: 50px;
+}
+
+.logo {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.btn {
+    background-color: #09dcc1;
+    font: inherit;
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 36px;
+}
+
+p {
+    max-width: 700px;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.img-size {
+    width: 650px;
+    height: auto;
+}
+
+#gameId,
+#userId,
+#gameUserId {
+    display: none;
+}
+
+/* forms format */
+
+.form {
+    width: 550px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+label {
+    margin-top: 25px;
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+    color: #ccc;
+}
+
+input {
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+textarea {
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    height: 70px;
+}
+
+input[type="submit"] {
+    color: #000;
+    cursor: pointer;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+/* input[type="file"] {
+    border-bottom: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    width: 550px;
+}
+
+input[type="file" i] {
+} */
+
+.upload {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 0.5px solid #ccc;
+    background-color: #000;
+    font-size: 20px;
+    color: #ccc;
+    width: 150px;
+    margin-right: 40%;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    left: 148px;
+    font-size: 15px;
+    color: #ccc;
+}
+
+input[type="file"]:focus {
+    outline: none;
+}
+
+.wrap {
+    position: relative;
+}
+
+.gameForm {
+    display: inline;
+}
+
+/* cards format */
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    align-self: center;
+}
+
+.card {
+    border: 1px solid #fff;
+    width: 365px;
+}
+
+.card-image {
+    background-color: #000;
+    height: 440px;
+}
+
+.card .card-image img {
+    min-width: 310px;
+    min-height: 350px;
+    max-height: 375px;
+    max-width: 330px;
+    margin: 0px auto;
+    padding-top: 15px;
+}
+
+.card-content p {
+    color: #000;
+    font-size: 15px;
+}
+
+.red {
+    width: 75px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 400;
+    background-color: #09dcc1 !important;
+}
+
+.card-title-div {
+    background-color: rgba(0, 0, 0, 0.521);
+    width: 100%;
+    height: 70px;
+}
+
+.card-title {
+    width: 100%;
+    text-align: center;
+}
+
+.card .card-image .card-title {
+    padding: 10px;
+}
+
+.card
+    .card-action
+    a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #000;
+    font-weight: bold;
+}
+
+.card
+    .card-action
+    a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+    color: #09dcc1;
+}
+
+/* table format */
+
+table {
+    width: 700px;
+    border-collapse: separate;
+}
+
+table,
+thead,
+tbody {
+    border: 1px solid #fff;
+    background-color: rgba(39, 38, 38, 0.904);
+}
+
+thead {
+    font-size: 18px;
+}
+
+tbody {
+    font-size: 16px;
+}
+
+.small {
+    width: 20%;
+}
+
+/* carousel format */
+
+.carousel .carousel-item {
+    height: 350px;
+    width: 350px;
+}
+
+/* footer format */
+
+footer {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 23px;
+    font-family: "Charm", cursive;
+}
+footer a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: bold;
+}
+footer span {
+    font-size: 20px;
+    font-weight: 400;
+}
+footer img {
+    height: 25px;
+    width: 25px;
+}

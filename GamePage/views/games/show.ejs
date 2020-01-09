@@ -1,0 +1,91 @@
+<%- include("../partials/header.ejs")%>
+
+<section class="center">
+    <img class="img-size" src="<%= game.image %>" alt="game image" />
+    <br />
+    <br />
+    <a class="size" href="<%= game.link %>" target="_blank">Play!</a>
+    <br />
+    <br />
+    <a class="size" href="<%= game.codeLink %>" target="_blank">Check out the Code</a>
+    <br />
+    <p><%= game.description %></p>
+    <br />
+</section>
+
+<section>
+    <h3 class="title">Comments</h3>
+
+    <% if (game.comments.length) { game.comments.forEach( comment => {%>
+    <table class="center">
+        <thead>
+            <tr>
+                <th><%= comment.name %></th>
+                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user)) { %>
+                <th class="small"></th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="align"><%= comment.description %></td>
+                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user)) { %>
+                <td class="small">
+                    <form
+                        action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=DELETE"
+                        method="POST"
+                    >
+                        <input
+                            class="btn waves-effect waves-light"
+                            type="submit"
+                            value="Delete"
+                        />
+                    </form>
+                </td>
+                <% } %>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <% })} else {} %>
+</section>
+
+<br>
+<br>
+
+<section>
+    <h4 class="align">Add Your Comment</h4>
+    <form class="form" action="/games/<%= game._id %>/comments" method="POST">
+        <br />
+        <div class="center">
+        <label class="align" for="description"
+            >Comment
+            <br>
+            <br>
+            <textarea
+                type="text"
+                name="description"
+                id="description"
+                class="validate"
+                autocomplete="off"
+                required
+            ></textarea>
+        </label>
+        </div>
+        <br />
+        <div class="center">
+        <input
+            class="btn waves-effect waves-light"
+            id="commentBtn"
+            type="submit"
+            value="Submit"
+        />
+        </div>
+    </form>
+</section>
+
+<br>
+<br>
+
+<%- include("../partials/footer.ejs") %>

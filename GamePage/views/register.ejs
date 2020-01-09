@@ -1,0 +1,46 @@
+<%- include("../partials/header.ejs") %>
+
+<form class="form" action="/register" method="POST">
+    <div class="center">
+        <label for="name">Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            class="validate"
+            autocomplete="off"
+            required
+        />
+    </div>
+    <div class="center">
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            class="validate"
+            autocomplete="off"
+            required
+        />
+    </div>
+    <div class="center">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            class="validate"
+            autocomplete="off"
+            required
+        />
+    </div>
+    <div class="center">
+        <input
+            type="submit"
+            value="Submit"
+            class="btn waves-effect waves-light"
+        />
+    </div>
+</form>
+
+<%- include("../partials/footer.ejs") %>

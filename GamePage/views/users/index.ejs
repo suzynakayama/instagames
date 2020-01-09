@@ -1,0 +1,59 @@
+<%- include("../partials/header.ejs") %>
+
+<a class="display btn waves-effect waves-light" href="/games/new">Add New Game</a>
+
+<section>
+    <div class="flex">
+        <% if (games.length) { games.forEach(game => {%>
+        <div class="flex-item">
+            <div class="card">
+                <div class="card-image">
+                    <img src="<%= game.image %>" />
+                    <div class="card-title-div">
+                        <span class="card-title"><%= game.name %></span>
+                    </div>
+                    <a
+                        class="btn-floating halfway-fab waves-effect waves-light red"
+                        href="/games/<%= game._id %>"><i class="material-icons">Info</i></a>
+                </div>
+                <div class="card-content">
+                    <p><%= game.description %></p>
+                </div>
+                <div class="card-action">
+                    <a href="<%= game.link %>" target="_blank">Play!</a>
+                    <form
+                        class="gameForm"
+                        action="/games/<%= game._id %>/edit"
+                        method="GET"
+                    >
+                        <input
+                            class="btn waves-effect waves-light"
+                            type="submit"
+                            value="Update"
+                        />
+                    </form>
+
+                    <form
+                        class="gameForm"
+                        action="/games/<%= game._id %>?_method=DELETE"
+                        method="POST"
+                    >
+                        <input
+                            class="btn waves-effect waves-light"
+                            type="submit"
+                            value="Delete"
+                        />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <% })} else { %>
+    <h5 class="align">You don't have any games yet.</h5>
+    <% } %>
+        </div>
+</section>
+
+<br />
+<br />
+<%- include("../partials/footer.ejs") %>
