@@ -30,7 +30,7 @@ Check the App [here](https://www.example.com)
 
 Check the Trello board [here](https://trello.com/b/XYitKOk0/ga-project-2-games-page)
 
-Check the Heroku link [here](https://myinstagame.herokuapp.com/)
+Check the Heroku link [here](https://myinstagames.herokuapp.com/)
 
     Instructions:
         1. Enter the site above
