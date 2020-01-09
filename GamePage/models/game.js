@@ -27,11 +27,11 @@ const gameSchema = new Schema(
         },
         image: String,
         imageId: String,
-        link: {
+        link: String,
+        codeLink: {
             type: String,
             required: true
         },
-        codeLink: String,
         description: String,
         user: {
             type: Schema.Types.ObjectId,
