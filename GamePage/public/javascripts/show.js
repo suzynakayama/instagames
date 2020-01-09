@@ -32,7 +32,7 @@ $(document).ready(function() {
                         </div>
                         <a
                         class="btn-floating halfway-fab waves-effect waves-light red"
-                        href="/games/ ${game._id} "
+                        href="/games/${game._id} "
                         ><i class="material-icons">Info</i></a
                         >
                     </div>
@@ -40,7 +40,7 @@ $(document).ready(function() {
                         <p> ${game.description} </p>
                     </div>
                     <div class="card-action">
-                        <a href=" ${game.link}" target="_blank">Play!</a>
+                        <a href="${game.link}" target="_blank">Play!</a>
                     </div>
                 </div>
             </div>`;

@@ -40,14 +40,10 @@ const showGame = (req, res) => {
 };
 
 const createGame = (req, res) => {
-    console.log(req.file);
     cloudinary.v2.uploader.upload(req.file.path, (err, result) => {
         if (err) {
             console.log(err);
         }
-
-        console.log(result);
-        console.log(req.body);
 
         let user = req.user;
         req.body.user = user.id;
