@@ -45,12 +45,13 @@ nav {
     z-index: 3;
 }
 
-nav a {
-    margin: 0 15px;
+nav ul li a {
+    margin: 0 5px;
     color: rgb(52, 58, 64);
+    font-size: 20px;
 }
 
-nav a:hover {
+nav ul li a:hover {
     text-decoration: none;
     color: #09dcc1;
 }
@@ -63,6 +64,14 @@ nav img {
     height: 50px;
     width: auto;
     margin-left: 25px;
+}
+
+#hamburger {
+    display: none;
+}
+
+nav label {
+    display: none;
 }
 
 /* main formatting */
@@ -308,16 +317,104 @@ footer {
     font-size: 23px;
     font-family: "Charm", cursive;
 }
+
 footer a {
     text-decoration: none !important;
     color: white !important;
     font-weight: bold;
 }
+
 footer span {
     font-size: 20px;
     font-weight: 400;
 }
+
 footer img {
     height: 25px;
     width: 25px;
+}
+
+/* Media Queries */
+
+@media (max-width: 680px) {
+    nav {
+        width: 100vw;
+    }
+
+    nav label {
+        margin-top: 0;
+        display: inline-block;
+        font-style: normal;
+        font-size: 1.2em;
+        position: absolute;
+        right: 20px;
+        text-align: right;
+        color: rgb(52, 58, 64);
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav input {
+        /* display: none; */
+        z-index: 5;
+        margin-right: 160px;
+        height: 60px;
+        width: 60px;
+        background-color: red;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav input:checked ~ ul {
+        display: flex;
+        position: absolute;
+        right: 2px;
+        top: 50px;
+        height: 250px;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+    }
+
+    nav input:checked ~ ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    nav ul li a:hover {
+        cursor: pointer;
+        color: #09dcc1;
+    }
+
+    .form {
+        width: 85vw;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .img-size {
+        width: 80vw;
+        height: auto;
+    }
+
+    table {
+        width: 80vw;
+        border-collapse: separate;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
 }
