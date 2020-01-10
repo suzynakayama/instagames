@@ -107,7 +107,7 @@ nav label {
 
 #edit-del-btn {
     display: inline-block;
-    margin-left: 36px;
+    margin-left: 32px;
 }
 
 p {
@@ -431,5 +431,9 @@ footer img {
 
     input[type="file"] {
         display: none;
+    }
+
+    #edit-del-btn {
+        margin-left: 36px;
     }
 }
