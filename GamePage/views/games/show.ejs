@@ -21,7 +21,7 @@
         <thead>
             <tr>
                 <th><%= comment.name %></th>
-                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user)) { %>
+                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user) || user.admin) { %>
                 <th class="small"></th>
                 <% } %>
             </tr>
@@ -29,7 +29,7 @@
         <tbody>
             <tr>
                 <td class="align"><%= comment.description %></td>
-                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user)) { %>
+                <% if (String(user._id) == String(game.user) || String(user._id) == String(comment.user) || user.admin) { %>
                 <td class="small">
                     <form
                         action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=DELETE"

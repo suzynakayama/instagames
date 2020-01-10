@@ -33,6 +33,19 @@
             </div>
             <div class="card-action">
                 <a href="<%= game.link %>" target="_blank">Play!</a>
+                <% if (user.admin) { %>
+                <form
+                    id="admin-btn"
+                    action="/games/<%= game._id %>?_method=DELETE"
+                    method="POST"
+                >
+                    <input
+                        class="btn waves-effect waves-light"
+                        type="submit"
+                        value="Delete"
+                    />
+                </form>
+                <% } %>
             </div>
         </div>
     </div>
@@ -42,4 +55,3 @@
 <script src="/javascripts/show.js"></script>
 
 <%- include("../partials/footer.ejs") %>
-

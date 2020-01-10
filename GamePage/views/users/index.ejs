@@ -21,6 +21,7 @@
                 </div>
                 <div class="card-action">
                     <a href="<%= game.link %>" target="_blank">Play!</a>
+                    <div id="edit-del-btn">
                     <form
                         class="gameForm"
                         action="/games/<%= game._id %>/edit"
@@ -44,6 +45,7 @@
                             value="Delete"
                         />
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

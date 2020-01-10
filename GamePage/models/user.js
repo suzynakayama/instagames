@@ -11,6 +11,10 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
+        admin: {
+            type: Boolean,
+            default: false
+        },
         googleId: String
     },
     { timestamps: true }

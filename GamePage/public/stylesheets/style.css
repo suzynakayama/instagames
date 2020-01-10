@@ -100,6 +100,16 @@ nav label {
     line-height: 36px;
 }
 
+#admin-btn {
+    display: inline-block;
+    margin-left: 140px;
+}
+
+#edit-del-btn {
+    display: inline-block;
+    margin-left: 36px;
+}
+
 p {
     max-width: 700px;
     font-size: 20px;
@@ -110,12 +120,6 @@ p {
 .img-size {
     width: 650px;
     height: auto;
-}
-
-#gameId,
-#userId,
-#gameUserId {
-    display: none;
 }
 
 /* forms format */
@@ -416,5 +420,16 @@ footer img {
 
     .btn {
         font-size: 10px;
+    }
+
+    .upload {
+        padding: 8px 12px;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    input[type="file"] {
+        display: none;
     }
 }
