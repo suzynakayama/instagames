@@ -27,16 +27,18 @@ const newGame = (req, res) => {
 
 const showGame = (req, res) => {
     let user = req.user;
-    Game.findById(req.params.id, (err, game) => {
-        User.find({ game: game.id }).exec((err, users) => {
-            return res.render("games/show", {
-                title: game["name"],
-                users,
-                game,
-                user
+    Game.findById(req.params.id)
+        .populate("user")
+        .exec((err, game) => {
+            User.find({ game: game.id }).exec((err, users) => {
+                return res.render("games/show", {
+                    title: game["name"],
+                    users,
+                    game,
+                    user
+                });
             });
         });
-    });
 };
 
 const createGame = (req, res) => {

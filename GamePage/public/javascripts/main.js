@@ -4,7 +4,7 @@ $(document).ready(function() {
         url: "/api/games/all",
         success: function(res) {
             for (let i = 0; i < res.length; i++) {
-                const imgItem = JSON.stringify(res[i].image);
+                const imgItem = res[i].image;
                 const gameHTML = `<img class="carousel-item" src=${imgItem} />`;
 
                 $(".carousel").append(gameHTML);

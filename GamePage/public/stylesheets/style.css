@@ -195,6 +195,14 @@ input[type="file"]:focus {
     display: inline;
 }
 
+#game-id,
+#game-user,
+#comment-user,
+#user-id,
+#user-admin {
+    display: none;
+}
+
 /* cards format */
 
 .flex {
