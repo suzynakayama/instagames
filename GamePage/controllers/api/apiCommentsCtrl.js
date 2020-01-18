@@ -1,12 +1,26 @@
-// const Game = require("../../models/game");
+const Game = require("../../models/game");
 
-// const index = (req, res) => {
-//     Game.findById(req.params.id, (err, game) => {
-//         console.log(game);
-//         let comments = game.comments;
-//         res.status(200).json(comments);
-//     });
-// };
+const index = (req, res) => {
+    Game.findById(req.params.id, (err, game) => {
+        let query = req.query.description;
+        let sanitizedQuery = query.replace(/\</g, ">");
+        console.log(sanitizedQuery);
+        let newComment = {
+            name: req.user.name,
+            description: sanitizedQuery,
+            user: req.user._id
+        };
+        game.comments.push(newComment);
+        game.save(err => {
+            console.log("api " + game);
+            let len = game.comments.length;
+            let comment = game.comments[len - 1];
+            res.status(200).json(comment);
+        });
+    });
+};
+
+module.exports = { index };
 
 // const createComment = (req, res) => {
 //     Game.findById(req.params.id, (err, game) => {

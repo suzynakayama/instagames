@@ -65,7 +65,11 @@
 
 <section>
     <h4 class="align">Add Your Comment</h4>
-    <form class="form" action="/games/<%= game._id %>/comments" method="POST">
+    <form
+        class="form"
+        action="/api/games/<%= game._id %>/comments"
+        method="POST"
+    >
         <br />
         <div class="center">
             <label class="align" for="description"
@@ -101,5 +105,7 @@
 <p id="game-user"><%= game.user %></p>
 <p id="user-id"><%= user._id %></p>
 <p id="user-admin"><%= user.admin %></p>
+
+<script defer src="/javascripts/comments.js"></script>
 
 <%- include("../partials/footer.ejs") %>
