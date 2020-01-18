@@ -22,21 +22,6 @@ const index = (req, res) => {
 
 module.exports = { index };
 
-// const createComment = (req, res) => {
-//     Game.findById(req.params.id, (err, game) => {
-//         let newComment = {
-//             name: req.user.name,
-//             description: req.body.description,
-//             user: req.user._id
-//         };
-//         game.comments.push(newComment);
-//         game.save()
-//         res.status(200).json(newComment)
-//             (`/games/${game._id}`);
-//         });
-//     });
-// };
-
 // const deleteComment = (req, res) => {
 //     Game.findById(req.params.id, (err, game) => {
 //         const comment = game.comments.id(req.params.comment_id);
@@ -49,6 +34,5 @@ module.exports = { index };
 // };
 
 // module.exports = {
-//     createComment,
 //     deleteComment
 // };

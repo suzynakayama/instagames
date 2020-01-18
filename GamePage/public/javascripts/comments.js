@@ -37,7 +37,7 @@ $("#comment-btn").on("click", function(e) {
 
             if (userId == gameUser || userId == commentUser || userAdmin) {
                 newComment1 += `<td class="small">
-                                <form action="/games/<%= game._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <form action="/games/${gameId}/comments/${res._id}?_method=DELETE" method="POST">
                                     <input class="btn waves-effect waves-light" type="submit" value="Delete" />
                                 </form>
                             </td>`;
