@@ -14,7 +14,6 @@ $("#comment-btn").on("click", function(e) {
         },
         dataType: "json",
         success: function(res) {
-            console.dir(res);
             let gameUser = $("#game-user");
             let commentUser = $("#comment-user").text();
             let userId = $("#user-id").text();

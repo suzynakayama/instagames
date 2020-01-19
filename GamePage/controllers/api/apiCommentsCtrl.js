@@ -4,7 +4,6 @@ const index = (req, res) => {
     Game.findById(req.params.id, (err, game) => {
         let query = req.query.description;
         let sanitizedQuery = query.replace(/\</g, ">");
-        console.log(sanitizedQuery);
         let newComment = {
             name: req.user.name,
             description: sanitizedQuery,
@@ -12,7 +11,6 @@ const index = (req, res) => {
         };
         game.comments.push(newComment);
         game.save(err => {
-            console.log("api " + game);
             let len = game.comments.length;
             let comment = game.comments[len - 1];
             res.status(200).json(comment);
