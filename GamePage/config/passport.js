@@ -30,10 +30,12 @@ passport.use(
     )
 );
 
+// ------------------- Store the userId in the req.session.passport -------------------
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
+// ------------------- Get the user info from DB and attach to the req.user -------------------
 passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
         done(err, user);

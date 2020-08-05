@@ -3,18 +3,18 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema(
     {
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
+        user: {                                     //# Referencing the User Document - just the ID
+        type: Schema.Types.ObjectId,
+        ref: "User",
         },
         name: {
-            type: String,
-            required: true
+        type: String,
+        required: true,
         },
         description: {
-            type: String,
-            required: true
-        }
+        type: String,
+        required: true,
+        },
     },
     { timestamps: true }
 );
@@ -36,11 +36,11 @@ const gameSchema = new Schema(
             required: true
         },
         description: String,
-        user: {
+        user: {                                     //# Referencing the User Document - just the ID
             type: Schema.Types.ObjectId,
             ref: "User"
         },
-        comments: [commentSchema]
+        comments: [commentSchema]                   //# Embedding the Comment Document - 'subdocuments'
     },
     { timestamps: true }
 );
